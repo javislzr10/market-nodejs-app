@@ -1,0 +1,32 @@
+<main class="container p5">
+    {{>errors}}
+    {{>messages}}
+</main>
+<div class="container mt-4">
+    <div class="row">
+        {{#each publicaciones}}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title d-flex justify-content-between aling-items-center">
+                        {{titulo}} <a href="/publicaciones/editar/{{_id}}"><i class="fas fa-pencil-alt"></i></a>
+                    </h4>
+                    <hr class="my-4">
+                    <p>Precio: {{precio}}</p>
+                    <p>Categoria: {{categoria}}</p>
+                    <p>Estado: {{estado}}</p>
+                    <p>Descripcion: {{descripcion}}</p>
+                    <p>Telefono: {{telefono}}</p>
+                    <p>Direccion: {{direccion}}</p>
+                    <form action="/publicaciones/eliminar/{{_id}}?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger btn-block btn-sm">
+                            <i class="fas fa-trash-alt"></i> Delete
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

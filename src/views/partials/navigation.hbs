@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"
+        class="d-inline-block align-text-top">
+      Market APP
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/dui">DUI</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        {{#if user}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user"></i> Publicacion
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/publicaciones"><i class="fas fa-clipboard"></i> Publicaciones</a>
+            <a class="dropdown-item" href="/publicaciones/agregar"><i class="fas fa-plus-circle"> </i> Agregar
+              Publicacion</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/usuarios/logout"><i class="fas fa-times-circle"></i> Cerrar sesión </a>
+          </div>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/usuarios/signin"><i class="fas fa-sign-in-alt"></i> Iniciar sesión </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/usuarios/signup"><i class="fas fa-user-plus"></i> Registrarse </a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>

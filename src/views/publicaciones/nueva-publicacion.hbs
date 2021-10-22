@@ -1,0 +1,63 @@
+<main class="container p5">
+  {{>errors}}
+  {{>messages}}
+</main>
+<div class="col-md-6 mx-auto">
+  <div class="card text-center">
+    <div class="card-header">
+      <h3>Nueva Publicacion</h3>
+    </div>
+    <div class="card-body">
+      <form action="/publicaciones/nueva-publicacion" method="POST">
+        <div class="form-group">
+          <input type="text" name="titulo" class="form-control" placeholder="Titulo" autofocus required />
+        </div>
+        <div class="form-group">
+          <input type="text" name="precio" class="form-control" placeholder="Precio" required />
+        </div>
+        <div class="form-group">
+          <select type="text" name="categoria" class="form-control" required >
+            <option selected="selected">Categoria</option>
+            <optgroup label="Artículo en venta">
+              <option value="Casa y jardin">Casa y jardin</option>
+              <option value="Ropa y accesorios">Ropa y accesorios</option>
+              <option value="Electronica">Electronica</option>
+              <option value="Videojuegos">Videojuegos</option>
+            </optgroup>
+            <optgroup label="Vehículo en venta">
+              <option value="Auto/camioneta">Auto/camioneta</option>
+              <option value="Motocicleta">Motocicleta</option>
+              <option value="Todoterreno">Todoterreno</option>
+            </optgroup>
+            <optgroup label="Propiedad en venta o alquiler">
+              <option value="Alquilar">Alquilar</option>
+              <option value="En venta">En venta</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="form-group">
+          <select type="text" name="estado" class="form-control" required>
+            <option selected="selected">Estado</option>
+            <option value="Nuevo">Nuevo</option>
+            <option value="Usado - Como nuevo">Usado - Como nuevo</option>
+            <option value="Usado - Buen estado">Usado - Buen estado</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea name="descripcion" class="form-control" placeholder="Descripcion" required></textarea>
+        </div>
+        <div class="form-group">
+          <input type="text" name="telefono" class="form-control" placeholder="Telefono" required />
+        </div>
+        <div class="form-group">
+          <input type="text" name="direccion" class="form-control" placeholder="Direccion" required />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
